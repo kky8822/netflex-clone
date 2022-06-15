@@ -13,6 +13,7 @@ const Nav = styled(motion.div)`
   font-size: 14px;
   padding: 20px 60px;
   color: white;
+  z-index: 10;
 `;
 
 const Col = styled.div`
@@ -152,6 +153,7 @@ function Header() {
         <Search>
           <motion.svg
             onClick={openSearch}
+            cursor="pointer"
             animate={{ x: searchOpen ? -120 : 0 }}
             transition={{ type: "linear" }}
             fill="currentColor"
