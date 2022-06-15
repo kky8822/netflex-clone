@@ -1,4 +1,11 @@
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  background-color: ${(props) => props.theme.black.lighter};
+  height: 200vh;
+`;
+
 function Home() {
-  return <div style={{ backgroundColor: "whitesmoke", height: "200vh" }}></div>;
+  return <Wrapper></Wrapper>;
 }
 export default Home;

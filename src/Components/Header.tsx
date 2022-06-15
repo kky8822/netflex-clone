@@ -24,6 +24,7 @@ const Logo = styled(motion.svg)`
   margin-right: 50px;
   width: 95px;
   height: 25px;
+  color: ${(props) => props.theme.red};
   fill: ${(props) => props.theme.red};
   path {
     stroke-width: 10px;
@@ -77,18 +78,18 @@ const Input = styled(motion.input)`
   position: absolute;
   right: 0px;
   padding: 5px 10px;
-  padding-left: 40px;
+  padding-left: 30px;
   z-index: -1;
   color: white;
   font-size: 16px;
   background-color: transparent;
   border: 1px solid ${(props) => props.theme.white.lighter};
-  width: 300px;
+  width: 150px;
 `;
 
 const logoVariants = {
   normal: { fillOpacity: 1 },
-  active: { fillOpacity: [0, 1, 0], transition: { repeat: Infinity } },
+  active: { fillOpacity: [1, 0, 1], transition: { repeat: Infinity } },
 };
 
 const navVariants = {
@@ -151,7 +152,7 @@ function Header() {
         <Search>
           <motion.svg
             onClick={openSearch}
-            animate={{ x: searchOpen ? -265 : 0 }}
+            animate={{ x: searchOpen ? -120 : 0 }}
             transition={{ type: "linear" }}
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -169,7 +170,7 @@ function Header() {
             animate={inputAnimation}
             initial={{ scaleX: 0 }}
             transition={{ type: "linear" }}
-            placeholder="Search for Movie or Tv Show ..."
+            placeholder="Search ..."
           />
         </Search>
       </Col>
