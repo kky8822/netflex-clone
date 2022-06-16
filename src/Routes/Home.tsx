@@ -164,10 +164,6 @@ const infoVariants = {
   },
 };
 
-interface IForm {
-  keyword: string;
-}
-
 function Home() {
   const { data, isLoading } = useQuery<IGetMoviesResult>(
     ["movies", "nowPlaying"],
