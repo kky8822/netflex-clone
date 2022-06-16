@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
-import { Link, useMatch } from "react-router-dom";
+import { Link, useMatch, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -105,8 +105,8 @@ interface IForm {
 
 function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
-  const homeMatch = useMatch("/");
-  const tvMatch = useMatch("/tv");
+  const homeMatch = useMatch("/netflex-clone");
+  const tvMatch = useMatch("/netflex-clone/tv");
   const inputAnimation = useAnimation();
   const navAnimation = useAnimation();
   const openSearch = () => {
@@ -129,8 +129,9 @@ function Header() {
   }, [scrollY, navAnimation]);
 
   const { register, handleSubmit } = useForm<IForm>();
+  const naviagate = useNavigate();
   const onValid = (data: IForm) => {
-    console.log(data);
+    naviagate(`/netflex-clone/search?keyword=${data.keyword}`);
   };
 
   return (
@@ -150,10 +151,12 @@ function Header() {
 
         <Items>
           <Item>
-            <Link to="/">Home {homeMatch && <Circle layoutId="circle" />}</Link>
+            <Link to="/netflex-clone">
+              Home {homeMatch && <Circle layoutId="circle" />}
+            </Link>
           </Item>
           <Item>
-            <Link to="/tv">
+            <Link to="/netflex-clone/tv">
               Tv Shows {tvMatch && <Circle layoutId="circle" />}
             </Link>
           </Item>

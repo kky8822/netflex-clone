@@ -10,10 +10,10 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="movies/:movieId" element={<Home />} />
-        <Route path="/tv/" element={<Tv />} />
-        <Route path="/search/" element={<Search />} />
+        <Route path="/netflex-clone" element={<Home />} />
+        <Route path="/netflex-clone/movies/:movieId" element={<Home />} />
+        <Route path="/netflex-clone/tv/" element={<Tv />} />
+        <Route path="/netflex-clone/search/" element={<Search />} />
       </Routes>
     </Router>
   );

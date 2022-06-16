@@ -176,7 +176,9 @@ function Home() {
   const [index, setIndex] = useState(0);
   const [leaving, setLeaving] = useState(false);
   const navigate = useNavigate();
-  const moviePathMatch: PathMatch<string> | null = useMatch("/movies/:movieId");
+  const moviePathMatch: PathMatch<string> | null = useMatch(
+    "/netflex-clone/movies/:movieId"
+  );
   // const moviePathMatch = useMatch<{ movieId: string }>("/movies/:movieId");
   const { scrollY } = useViewportScroll();
 
@@ -191,9 +193,9 @@ function Home() {
     }
   };
   const onBoxClicked = (movieId: number) => {
-    navigate(`/movies/${movieId}`);
+    navigate(`/netflex-clone/movies/${movieId}`);
   };
-  const onOverlayClicked = () => navigate("/");
+  const onOverlayClicked = () => navigate("/netflex-clone");
   const clickedMovie =
     moviePathMatch?.params.movieId &&
     data?.results.find(
